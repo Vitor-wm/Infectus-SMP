@@ -41,10 +41,6 @@ client.on('messageCreate', async (message) => {
 
     message.channel.send({ embeds: [embed], components: [row] });
   }
-  
-  if (message.content === '!loreserve') {
-    message.channel.send({ embeds: [loreEmbed] });
-  }
 });
 
 
@@ -170,12 +166,7 @@ client.on('interactionCreate', async (interaction) => {
   await interaction.editReply({
     content: `✅ Ticket criado: ${channel}`,
   });
-});]
-
-const loreEmbed = new EmbedBuilder()
-.setColor('#28361b')
-.setTitle('☣️ O COLAPSO')
-.setDescription(`SEU TEXTO GIGANTE AQUI`);
+});
 
 
 // 🔑 TOKEN
