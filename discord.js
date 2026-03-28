@@ -26,10 +26,6 @@ client.once('ready', () => {
 client.on('messageCreate', async (message) => {
   if (message.content === '!ticket') {
 
-  if (message.content === '!loreserve') {
-    message.channel.send({ embeds: [loreEmbed] });
-  }
-
     const embed = new EmbedBuilder()
       .setTitle('🎟️ Central de Atendimento - Infectus')
       .setDescription('Escolha uma categoria abaixo para abrir seu ticket.')
@@ -44,6 +40,10 @@ client.on('messageCreate', async (message) => {
     );
 
     message.channel.send({ embeds: [embed], components: [row] });
+  }
+  
+  if (message.content === '!loreserve') {
+    message.channel.send({ embeds: [loreEmbed] });
   }
 });
 
