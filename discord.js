@@ -26,6 +26,10 @@ client.once('ready', () => {
 client.on('messageCreate', async (message) => {
   if (message.content === '!ticket') {
 
+  if (message.content === '!loreserve') {
+    message.channel.send({ embeds: [loreEmbed] });
+  }
+
     const embed = new EmbedBuilder()
       .setTitle('🎟️ Central de Atendimento - Infectus')
       .setDescription('Escolha uma categoria abaixo para abrir seu ticket.')
@@ -166,7 +170,12 @@ client.on('interactionCreate', async (interaction) => {
   await interaction.editReply({
     content: `✅ Ticket criado: ${channel}`,
   });
-});
+});]
+
+const loreEmbed = new EmbedBuilder()
+.setColor('#28361b')
+.setTitle('☣️ O COLAPSO')
+.setDescription(`SEU TEXTO GIGANTE AQUI`);
 
 
 // 🔑 TOKEN
