@@ -159,7 +159,7 @@ client.on('interactionCreate', async (interaction) => {
 
   await channel.send({
     content: mencoes,
-    embeds: interaction.customId === 'lore' ? [loreEmbed] : [embed],
+    embeds: [embed],
     components: [fecharBtn]
   });
 
@@ -168,62 +168,6 @@ client.on('interactionCreate', async (interaction) => {
   });
 });
 
-const loreEmbed = new EmbedBuilder()
-.setColor('#28361b')
-.setTitle('☣️ O COLAPSO')
-.setDescription(`Ano 2139.
-Cinquenta anos atrás, o mundo entrou em colapso.
-Tudo começou com uma crescente tensão política envolvendo os Estados Unidos e o restante do mundo. Suas decisões, cada vez mais agressivas, deixaram de ser apenas influência - passaram a ser imposição. Países que não concordavam começaram a resistir. E essa resistência rapidamente virou confronto.
-Ataques eram respondidos com mais ataques. Nenhum lado recuava. O planeta inteiro caminhava para uma guerra sem limites.
-Pressionados, os Estados Unidos decidiram agir de forma diferente.
-Longe de olhos públicos, iniciaram um projeto secreto na Antártida - um lugar onde ninguém observaria, onde ninguém interferiria. A missão não era apenas pesquisa. Era encontrar algo… qualquer coisa… que pudesse ser usado como vantagem contra o resto do mundo.
-Cinco cientistas foram enviados.
-Eles exploraram tudo que podiam - falhas geológicas, crateras esquecidas, túneis presos sob o gelo eterno. Horas de perfuração, silêncio absoluto, frio extremo.
-Até que encontraram uma caverna.
-No interior, algo impossível de ignorar: um enorme espelho de gelo puro, perfeitamente formado, como se tivesse sido moldado e não criado pela natureza. Mas o verdadeiro segredo não estava nele - e sim no que estava além.
-Ao atravessarem, encontraram uma estrutura cristalina. Uma cápsula.
-Ela parecia antiga… muito mais antiga do que qualquer registro humano.
-E então, ao menor toque, ela se desfez.
-Milhares de cristais caíram no chão. Alguns pequenos, outros maiores - todos ocos, todos frágeis. Não havia explicação lógica para aquilo.
-Mas havia curiosidade.
-Um dos cientistas decidiu quebrar um deles.
-O gás que saiu era insuportável. Um cheiro que lembrava morte, carne em decomposição, algo que o corpo humano rejeita antes mesmo de entender.
-Aquilo deveria ter sido o fim da missão.
-Mas não foi.
-Eles recolheram tudo. Cada fragmento. Cada cristal.
-E levaram de volta para uma base de pesquisa nos Estados Unidos.
-O que eles não sabiam… era que o contato já havia sido suficiente.
-O vírus não agia rápido. Ele se espalhava pelo corpo em silêncio, tomando espaço, substituindo funções, apagando lentamente o que tornava alguém humano.
-Quando chegaram à base, já não estavam bem.
-Isolados em um laboratório monitorado 24 horas, começaram a apresentar sinais. Fraqueza. Confusão. Instabilidade.
-Até que um deles simplesmente caiu.
-E quando voltou… já não era mais ele.
-Sem consciência, sem controle - apenas um instinto bruto. Fome. Violência. Sangue.
-Um por um, os outros começaram a cair também.
-O primeiro a se transformar atacou os corpos ao seu redor. A violência não era apenas matar - era consumir. E ao fazer isso, algo pior aconteceu.
-Os outros começaram a se levantar.
-Não como pessoas.
-Mas como algo vazio.
-Dentro daquele laboratório fechado, os cinco cientistas deixaram de existir. No lugar deles, restava apenas o início de algo muito maior.
-Durante o caos, um deles esbarrou nos cristais que haviam sido trazidos da Antártida.
-Eles caíram.
-E se quebraram.
-O gás se espalhou pela sala inteira.
-Os sistemas de segurança reagiram imediatamente. Alarmes dispararam. As portas foram seladas. O laboratório foi isolado.
-Mas já era tarde.
-Os Estados Unidos, sem perceber, tinham criado - e aprisionado - a arma biológica mais devastadora da história.
-E cometeram o erro final.
-Na tentativa de demonstrar poder, informações sobre o projeto vazaram. Coordenadas. Dados. Indícios daquilo que estavam escondendo.
-O mundo reagiu.
-Um ataque surpresa foi lançado contra a base.
-O míssil atingiu o alvo.
-E com isso… destruiu a única coisa que mantinha o vírus contido.
-O gás se espalhou.
-Rápido. Invisível. Imparável.
-Em questão de horas, cidades começaram a cair. Pessoas atacando pessoas. Famílias se destruindo. Nenhuma organização, nenhum exército, nenhuma fronteira foi capaz de conter.
-O que era para ser a maior arma dos Estados Unidos se tornou a maior tragédia da humanidade.
-E o mundo… nunca mais foi o mesmo.
-`);
 
 // 🔑 TOKEN
 client.login(process.env.TOKEN);
