@@ -17,6 +17,8 @@ const client = new Client({
   ]
 });
 
+let ticketCount = 0; // 🔢 contador de tickets
+
 client.once('ready', () => {
   console.log('Bot online!');
 });
@@ -33,9 +35,9 @@ client.on('messageCreate', async (message) => {
       .setFooter({ text: 'Infectus SMP • Sistema de Tickets' });
 
     const row = new ActionRowBuilder().addComponents(
-      new ButtonBuilder().setCustomId('suporte').setLabel('Suporte').setStyle(ButtonStyle.Primary),
-      new ButtonBuilder().setCustomId('denuncia').setLabel('Denúncia').setStyle(ButtonStyle.Danger),
-      new ButtonBuilder().setCustomId('parceria').setLabel('Parcerias').setStyle(ButtonStyle.Success),
+      new ButtonBuilder().setCustomId('suporte').setLabel('Suporte').setStyle(ButtonStyle.Secondary),
+      new ButtonBuilder().setCustomId('denuncia').setLabel('Denúncia').setStyle(ButtonStyle.Secondary),
+      new ButtonBuilder().setCustomId('parceria').setLabel('Parcerias').setStyle(ButtonStyle.Secondary),
       new ButtonBuilder().setCustomId('lore').setLabel('Lore').setStyle(ButtonStyle.Secondary)
     );
 
@@ -48,7 +50,7 @@ client.on('messageCreate', async (message) => {
 client.on('interactionCreate', async (interaction) => {
   if (!interaction.isButton()) return;
 
-  // 🔒 FECHAR (sem defer)
+  // 🔒 FECHAR
   if (interaction.customId === 'fechar_ticket') {
     await interaction.reply({
       content: '🔒 Fechando ticket em 3 segundos...',
@@ -62,7 +64,7 @@ client.on('interactionCreate', async (interaction) => {
     return;
   }
 
-  // 🎟️ CRIAR TICKET (usa defer aqui)
+  // 🎟️ CRIAR TICKET
   if (!['suporte', 'denuncia', 'parceria', 'lore'].includes(interaction.customId)) return;
 
   await interaction.deferReply({ ephemeral: true });
@@ -102,6 +104,10 @@ client.on('interactionCreate', async (interaction) => {
 
   const cargoSuporte = '1485702478010912768';
 
+  // 🔢 contador
+  ticketCount++;
+  const ticketNumber = String(ticketCount).padStart(3, '0');
+
   const permissionOverwrites = [
     {
       id: interaction.guild.id,
@@ -134,7 +140,7 @@ client.on('interactionCreate', async (interaction) => {
   });
 
   const channel = await interaction.guild.channels.create({
-    name: `${nome}-${interaction.user.username}`,
+    name: `${nome}-${ticketNumber}`, // 🏷️ nome com contador
     type: ChannelType.GuildText,
     permissionOverwrites: permissionOverwrites,
   });
