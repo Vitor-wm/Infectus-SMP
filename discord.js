@@ -73,19 +73,29 @@ client.on('interactionCreate', async (interaction) => {
   let descricao = '';
   let cargosPermitidos = [];
 
+  // 📌 DESCRIÇÃO PADRÃO (nova)
+  let descricaoPadrao = `Olá! Seu ticket foi aberto com sucesso. 
+
+Um membro da nossa Staff entrará em contato por aqui em até 24 horas para te ajudar e resolver o seu problema.
+
+⚠️ Aviso importante:
+Se o seu ticket for sobre denúncias, bugs, modpack ou problemas no servidor, pedimos que você já envie aqui o máximo de detalhes possível.
+
+O envio de prints ou vídeos é fundamental, pois torna muito mais fácil e rápido para a nossa equipe entender a situação e solucionar o seu caso.`;
+
   if (interaction.customId === 'suporte') {
     nome = 'suporte';
-    descricao = 'Explique seu problema e aguarde a equipe.';
+    descricao = descricaoPadrao;
   }
 
   if (interaction.customId === 'denuncia') {
     nome = 'denuncia';
-    descricao = 'Descreva a denúncia com provas.';
+    descricao = descricaoPadrao;
   }
 
   if (interaction.customId === 'parceria') {
     nome = 'parceria';
-    descricao = 'Envie informações sobre a parceria.';
+    descricao = descricaoPadrao;
     cargosPermitidos = [
       '1485702214361153696',
       '1485702287606288574',
@@ -95,7 +105,7 @@ client.on('interactionCreate', async (interaction) => {
 
   if (interaction.customId === 'lore') {
     nome = 'lore';
-    descricao = 'Envie sua história/lore para avaliação.';
+    descricao = descricaoPadrao;
     cargosPermitidos = [
       '1485702625767850125',
       '1485702684303687730'
