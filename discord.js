@@ -29,10 +29,10 @@ client.on('messageCreate', async (message) => {
   if (message.content === '!ticket') {
 
     const embed = new EmbedBuilder()
-      .setTitle('🎟️ Central de Atendimento - Infectus')
+      .setTitle('🎟️ Central de Atendimento - NeoSynthec')
       .setDescription('Escolha uma categoria abaixo para abrir seu ticket.')
       .setColor('#28361b')
-      .setFooter({ text: 'Infectus SMP • Sistema de Tickets' });
+      .setFooter({ text: 'NeoSynthec • Sistema de Tickets' });
 
     const row = new ActionRowBuilder().addComponents(
       new ButtonBuilder().setCustomId('suporte').setLabel('Suporte').setStyle(ButtonStyle.Secondary),
@@ -150,7 +150,7 @@ O envio de prints ou vídeos é fundamental, pois torna muito mais fácil e ráp
   });
 
   const channel = await interaction.guild.channels.create({
-    name: `${nome}-${ticketNumber}`, // 🏷️ nome com contador
+    name: `${nome}-${ticketNumber}`, 
     type: ChannelType.GuildText,
     permissionOverwrites: permissionOverwrites,
   });
@@ -159,7 +159,7 @@ O envio de prints ou vídeos é fundamental, pois torna muito mais fácil e ráp
     .setTitle(`🎟️ Ticket de ${nome}`)
     .setDescription(descricao)
     .setColor('#28361b')
-    .setFooter({ text: 'Infectus SMP' });
+    .setFooter({ text: 'NeoSynthec SMP' });
 
   const fecharBtn = new ActionRowBuilder().addComponents(
     new ButtonBuilder()
